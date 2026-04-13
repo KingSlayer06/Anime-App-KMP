@@ -32,7 +32,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.kingslayer06.anime_app.feature.explore.data"
+    namespace = "com.kingslayer06.anime_app.explore.data"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

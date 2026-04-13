@@ -21,6 +21,7 @@ compose-bom = "2026.03.01"
 material-icons = "1.7.3"
 kotlinSerialization = "1.11.0"
 coroutines = "1.10.2"
+google-fonts = "1.7.0"
 
 [libraries]
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
@@ -63,6 +64,8 @@ coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module="io.insert-koin:koin-compose", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+
+google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "google-fonts" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

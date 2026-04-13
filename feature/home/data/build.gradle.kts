@@ -20,7 +20,10 @@ kotlin {
 
         }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.koin.core)
+
+            implementation(projects.feature.home.domain)
+            implementation(projects.core.network)
         }
         iosMain.dependencies {
 
@@ -32,7 +35,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.kingslayer06.anime_app.feature.home.data"
+    namespace = "com.kingslayer06.anime_app.home.data"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

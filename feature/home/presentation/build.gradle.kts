@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
@@ -17,10 +18,21 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.uiToolingPreview)
+            implementation(libs.compose.uiTooling)
 
+            implementation(projects.core.ui)
         }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(projects.feature.home.domain)
+
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+
+            implementation(libs.coil.compose)
         }
         iosMain.dependencies {
 
@@ -32,7 +44,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.kingslayer06.anime_app.feature.home.presentation"
+    namespace = "com.kingslayer06.anime_app.home.presentation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

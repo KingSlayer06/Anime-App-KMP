@@ -32,9 +32,16 @@ include(":composeApp")
 include(":shared")
 
 include(":core:network")
+include(":core:ui")
+
 include(":feature:explore:data")
 include(":feature:explore:domain")
 include(":feature:explore:presentation")
+
 include(":feature:home:data")
 include(":feature:home:domain")
 include(":feature:home:presentation")
+
+include(":feature:myLibrary:data")
+include(":feature:myLibrary:domain")
+include(":feature:myLibrary:presentation")
