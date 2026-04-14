@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -38,8 +39,6 @@ fun <T> AutoAdvancePager(
     modifier: Modifier = Modifier,
     pageContent: @Composable (PagerScope.(Int) -> Unit)
 ) {
-    if (pageItems.isEmpty()) return
-
     val pagerState = rememberPagerState(pageCount = { pageItems.size })
     val pagerIsDragged by pagerState.interactionSource.collectIsDraggedAsState()
 
@@ -65,7 +64,7 @@ fun <T> AutoAdvancePager(
     }
 
     Box(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier,
         contentAlignment = Alignment.BottomCenter
     ) {
         HorizontalPager(

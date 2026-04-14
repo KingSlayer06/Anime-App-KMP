@@ -36,19 +36,19 @@ import com.kingslayer06.core.ui.Background
 import com.kingslayer06.core.ui.Primary
 import com.kingslayer06.core.ui.Secondary
 import com.kingslayer06.core.ui.TextPrimary
+import com.kingslayer06.core.ui.components.shimmerEffect
 import com.kingslayer06.core.ui.interFontFamily
 import com.kingslayer06.home.domain.model.Anime
 
 @Composable
 fun AnimeListSections(
-    modifier: Modifier = Modifier,
     title: String,
     animeList: List<Anime>,
     onClick: (String) -> Unit,
     onSeeAll: () -> Unit
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -87,13 +87,21 @@ fun AnimeListSections(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            itemsIndexed(
-                items = animeList.take(10)
-            ) { index, anime ->
-                AnimeCard(
-                    anime = anime,
-                    onClick = onClick
-                )
+            if (animeList.isEmpty()) {
+                items(
+                    count = 10
+                ) {
+                    AnimeCardSkeleton()
+                }
+            } else {
+                itemsIndexed(
+                    items = animeList.take(10)
+                ) { index, anime ->
+                    AnimeCard(
+                        anime = anime,
+                        onClick = onClick
+                    )
+                }
             }
         }
     }
@@ -152,5 +160,36 @@ private fun AnimeCard(
                 fontSize = 15.sp
             )
         }
+    }
+}
+
+@Composable
+private fun AnimeCardSkeleton() {
+    Column(
+        modifier = Modifier.width(150.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(150.dp, 200.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .shimmerEffect()
+        )
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(0.7f)
+                .height(15.dp)
+                .clip(RoundedCornerShape(4.dp))
+                .shimmerEffect()
+        )
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(0.4f)
+                .height(15.dp)
+                .clip(RoundedCornerShape(4.dp))
+                .shimmerEffect()
+        )
     }
 }
