@@ -2,6 +2,11 @@ package com.kingslayer06.home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kingslayer06.core.network.util.DataError
+import com.kingslayer06.core.network.util.Response
+import com.kingslayer06.core.network.util.onFailure
+import com.kingslayer06.core.network.util.onSuccess
+import com.kingslayer06.core.network.util.toErrorMessage
 import com.kingslayer06.home.domain.model.Anime
 import com.kingslayer06.home.domain.useCases.GetThisSeasonAnimeUseCase
 import com.kingslayer06.home.domain.useCases.GetTopRatedAnimeUseCase
@@ -30,19 +35,10 @@ class HomeViewModel(
     val state = _state.asStateFlow()
 
     init {
-        fetchAllData()
-    }
-
-    private fun fetchAllData() {
-        viewModelScope.launch {
-            getRecommendations()
-            delay(500)
-            getTopAnime()
-            delay(500)
-            getThisSeason()
-            delay(500)
-            getUpcomingSeason()
-        }
+        getRecommendations()
+        getTopAnime()
+        getThisSeason()
+        getUpcomingSeason()
     }
 
     fun getRecommendations(limit: Int = 5) {
@@ -53,7 +49,7 @@ class HomeViewModel(
                     _state.update { it.copy(isLoading = false, recommendations = recommendations) }
                 }
                 .onFailure { error ->
-                    _state.update { it.copy(isLoading = false, errorMessage = error.message) }
+                    _state.update { it.copy(isLoading = false, errorMessage = error.toErrorMessage()) }
                 }
         }
     }
@@ -66,7 +62,7 @@ class HomeViewModel(
                     _state.update { it.copy(isLoading = false, topAnime = topAnime) }
                 }
                 .onFailure { error ->
-                    _state.update { it.copy(isLoading = false, errorMessage = error.message) }
+                    _state.update { it.copy(isLoading = false, errorMessage = error.toErrorMessage()) }
                 }
         }
     }
@@ -79,7 +75,7 @@ class HomeViewModel(
                     _state.update { it.copy(isLoading = false, thisSeason = thisSeason) }
                 }
                 .onFailure { error ->
-                    _state.update { it.copy(isLoading = false, errorMessage = error.message) }
+                    _state.update { it.copy(isLoading = false, errorMessage = error.toErrorMessage()) }
                 }
         }
     }
@@ -92,7 +88,7 @@ class HomeViewModel(
                     _state.update { it.copy(isLoading = false, upcomingSeason = upcomingSeason) }
                 }
                 .onFailure { error ->
-                    _state.update { it.copy(isLoading = false, errorMessage = error.message) }
+                    _state.update { it.copy(isLoading = false, errorMessage = error.toErrorMessage()) }
                 }
         }
     }

@@ -21,6 +21,8 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(libs.koin.core)
+
+            implementation(projects.core.network)
         }
         iosMain.dependencies {
 
