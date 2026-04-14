@@ -24,6 +24,7 @@ kotlin {
 
             implementation(projects.feature.home.domain)
             implementation(projects.core.network)
+            implementation(projects.core.util)
         }
         iosMain.dependencies {
 

@@ -6,7 +6,9 @@ import io.ktor.client.call.body
 import io.ktor.client.request.get
 
 interface AnimeService {
-    suspend fun getTopAnime(): Result<AnimeResponseDto>
+    suspend fun getTopRatedAnime(limit: Int, filter: String): Result<AnimeResponseDto>
+    suspend fun getThisSeasonAnime(limit: Int): Result<AnimeResponseDto>
+    suspend fun getUpcomingSeasonAnime(limit: Int): Result<AnimeResponseDto>
 }
 
 class AnimeServiceImpl(
@@ -21,5 +23,7 @@ class AnimeServiceImpl(
         }
     }
 
-    override suspend fun getTopAnime(): Result<AnimeResponseDto> = getRequest("/top/anime")
+    override suspend fun getTopRatedAnime(limit: Int, filter: String): Result<AnimeResponseDto> = getRequest("/top/anime?filter=$filter&limit=$limit")
+    override suspend fun getThisSeasonAnime(limit: Int): Result<AnimeResponseDto> = getRequest("/seasons/now?limit=$limit")
+    override suspend fun getUpcomingSeasonAnime(limit: Int): Result<AnimeResponseDto> = getRequest("/seasons/upcoming?limit=$limit")
 }

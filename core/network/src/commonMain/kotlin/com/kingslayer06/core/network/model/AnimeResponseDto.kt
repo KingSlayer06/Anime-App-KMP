@@ -18,7 +18,7 @@ import kotlinx.serialization.SerialName
 
 @Serializable
 data class AnimeResponseDto(
-    @SerialName("pagination") val pagination: PaginationDto?,
+    @SerialName("pagination") val pagination: PaginationDto? = null,
     @SerialName("data") val data: List<AnimeDto>
 )
 
@@ -33,6 +33,7 @@ data class AnimeDto(
     @SerialName("status") val status: String?,                  // "Airing", "Finished Airing", "Not yet aired"
     @SerialName("score") val score: Double?,                    // null if not enough votes
     @SerialName("rank") val rank: Int?,                         // null if unranked
+    @SerialName("favorites") val favorites: Int,
     @SerialName("synopsis") val synopsis: String?,              // null on incomplete entries
     @SerialName("season") val season: String?,                  // null for movies / older anime
     @SerialName("year") val year: Int?,                         // null for older anime

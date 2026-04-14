@@ -31,6 +31,7 @@ object HttpClientFactory {
                     prettyPrint = true
                     isLenient = true
                     ignoreUnknownKeys = true
+                    allowSpecialFloatingPointValues = true
                 })
             }
 

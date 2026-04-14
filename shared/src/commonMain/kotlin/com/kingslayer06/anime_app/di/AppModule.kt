@@ -10,7 +10,7 @@ fun initKoin() {
     startKoin {
         modules(
             getNetworkModule(),
-            
+
             getHomeDataModule(),
             getHomeDomainModule(),
             getHomePresentationModule()

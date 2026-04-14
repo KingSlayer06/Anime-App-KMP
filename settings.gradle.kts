@@ -33,6 +33,7 @@ include(":shared")
 
 include(":core:network")
 include(":core:ui")
+include(":core:util")
 
 include(":feature:explore:data")
 include(":feature:explore:domain")

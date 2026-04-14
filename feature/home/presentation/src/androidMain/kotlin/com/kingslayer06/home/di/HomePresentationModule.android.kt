@@ -7,6 +7,12 @@ import org.koin.core.module.dsl.viewModel
 
 actual fun getHomePresentationModule(): Module {
     return module {
-        viewModel { HomeViewModel(get()) }
+        viewModel {
+            HomeViewModel(
+                get(),
+                get(),
+                get()
+            )
+        }
     }
 }
