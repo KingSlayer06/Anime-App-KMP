@@ -24,6 +24,7 @@ kotlin {
             implementation(libs.compose.foundation)
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
+            implementation(libs.compose.material.icons.extended)
 
             implementation(libs.kotlinx.coroutines.core)
         }

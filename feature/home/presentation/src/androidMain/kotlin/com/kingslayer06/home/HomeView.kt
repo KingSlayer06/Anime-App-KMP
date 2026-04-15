@@ -2,6 +2,7 @@ package com.kingslayer06.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
@@ -21,41 +22,42 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun HomeView(
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel = koinViewModel()
+    viewModel: HomeViewModel = koinViewModel(),
+    onClick: (Int) -> Unit
 ) {
     val uiState by viewModel.state.collectAsStateWithLifecycle()
 
-    when {
-        uiState.isLoading -> {
-            Box(
-                modifier = modifier,
-                contentAlignment = Alignment.Center
-            ) {
-                CircularProgressIndicator()
+    Box(modifier = modifier) {
+        when {
+            uiState.isLoading -> {
+                CircularProgressIndicator(
+                    modifier = Modifier.align(Alignment.Center)
+                )
             }
-        }
-        else -> {
-            HomeViewContent(
-                modifier = modifier,
-                uiState = uiState
-            )
+
+            else -> {
+                HomeViewContent(
+                    uiState = uiState,
+                    onClick = onClick
+                )
+            }
         }
     }
 }
 
 @Composable
 private fun HomeViewContent(
-    modifier: Modifier = Modifier,
-    uiState: HomeUiState
+    uiState: HomeUiState,
+    onClick: (Int) -> Unit
 ) {
     LazyColumn(
-        modifier = modifier,
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         item {
             AnimeRecommendations(
                 animeList = uiState.recommendations,
-                onClick = {}
+                onClick = onClick
             )
         }
 
@@ -63,7 +65,7 @@ private fun HomeViewContent(
             AnimeListSections(
                 title = "Top Anime",
                 animeList = uiState.topAnime,
-                onClick = {},
+                onClick = onClick,
                 onSeeAll = {}
             )
         }
@@ -72,7 +74,7 @@ private fun HomeViewContent(
             AnimeListSections(
                 title = "This Season",
                 animeList = uiState.thisSeason,
-                onClick = {},
+                onClick = onClick,
                 onSeeAll = {}
             )
         }
@@ -97,6 +99,7 @@ private fun HomeViewPreview() {
             topAnime = emptyList(),
             thisSeason = Anime.dummyList,
             upcomingSeason = Anime.dummyList
-        )
+        ),
+        onClick = {}
     )
 }

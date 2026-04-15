@@ -7,7 +7,13 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 private val viewModelModule = module {
-    factory { HomeViewModel(get()) }
+    factory {
+        HomeViewModel(
+            getTopRatedAnimeUseCase = get(),
+            getThisSeasonAnimeUseCase = get(),
+            getUpcomingSeasonAnimeUseCase = get()
+        )
+    }
 }
 
 actual fun getHomePresentationModule(): Module {

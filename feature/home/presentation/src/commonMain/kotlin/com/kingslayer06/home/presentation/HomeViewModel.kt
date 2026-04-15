@@ -2,8 +2,6 @@ package com.kingslayer06.home.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kingslayer06.core.network.util.DataError
-import com.kingslayer06.core.network.util.Response
 import com.kingslayer06.core.network.util.onFailure
 import com.kingslayer06.core.network.util.onSuccess
 import com.kingslayer06.core.network.util.toErrorMessage
@@ -11,7 +9,6 @@ import com.kingslayer06.home.domain.model.Anime
 import com.kingslayer06.home.domain.useCases.GetThisSeasonAnimeUseCase
 import com.kingslayer06.home.domain.useCases.GetTopRatedAnimeUseCase
 import com.kingslayer06.home.domain.useCases.GetUpcomingSeasonAnimeUseCase
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
