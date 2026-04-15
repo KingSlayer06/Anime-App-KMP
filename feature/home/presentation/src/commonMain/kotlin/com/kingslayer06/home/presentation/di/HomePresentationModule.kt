@@ -1,4 +1,4 @@
-package com.kingslayer06.home.di
+package com.kingslayer06.home.presentation.di
 
 import org.koin.core.module.Module
 

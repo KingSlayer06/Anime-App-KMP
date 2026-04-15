@@ -12,7 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.kingslayer06.core.ui.components.BottomNavigationBar
-import com.kingslayer06.home.HomeView
+import com.kingslayer06.home.presentation.HomeView
 
 @Composable
 fun MainView(

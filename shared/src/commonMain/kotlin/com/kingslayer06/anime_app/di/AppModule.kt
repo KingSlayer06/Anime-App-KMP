@@ -5,7 +5,7 @@ import com.kingslayer06.details.domain.di.getDetailsDataModule
 import com.kingslayer06.details.domain.di.getDetailsDomainModule
 import com.kingslayer06.details.presentation.di.getDetailsPresentationModule
 import com.kingslayer06.home.data.di.getHomeDataModule
-import com.kingslayer06.home.di.getHomePresentationModule
+import com.kingslayer06.home.presentation.di.getHomePresentationModule
 import com.kingslayer06.home.domain.di.getHomeDomainModule
 import org.koin.core.context.startKoin
 

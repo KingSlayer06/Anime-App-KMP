@@ -1,4 +1,4 @@
-package com.kingslayer06.home
+package com.kingslayer06.home.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,11 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.kingslayer06.home.components.AnimeListSections
-import com.kingslayer06.home.components.AnimeRecommendations
+import com.kingslayer06.home.presentation.components.AnimeListSections
+import com.kingslayer06.home.presentation.components.AnimeRecommendations
 import com.kingslayer06.home.domain.model.Anime
-import com.kingslayer06.home.presentation.HomeUiState
-import com.kingslayer06.home.presentation.HomeViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
