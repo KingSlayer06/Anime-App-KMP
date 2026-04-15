@@ -44,7 +44,7 @@ import com.kingslayer06.home.domain.model.Anime
 fun AnimeListSections(
     title: String,
     animeList: List<Anime>,
-    onClick: (String) -> Unit,
+    onClick: (Int) -> Unit,
     onSeeAll: () -> Unit
 ) {
     Column(
@@ -110,7 +110,7 @@ fun AnimeListSections(
 @Composable
 private fun AnimeCard(
     anime: Anime,
-    onClick: (String) -> Unit
+    onClick: (Int) -> Unit
 ) {
     Column(
         modifier = Modifier

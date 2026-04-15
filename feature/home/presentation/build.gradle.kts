@@ -1,4 +1,3 @@
-import org.gradle.kotlin.dsl.implementation
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -27,10 +26,10 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.compose.material.icons.extended)
 
-            implementation(projects.core.network)
             implementation(projects.core.ui)
         }
         commonMain.dependencies {
+            implementation(projects.core.network)
             implementation(projects.feature.home.domain)
 
             implementation(libs.koin.compose)

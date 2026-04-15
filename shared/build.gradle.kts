@@ -29,9 +29,14 @@ kotlin {
         commonMain.dependencies {
             api(projects.core.network)
             api(projects.core.ui)
+
             api(projects.feature.home.data)
             api(projects.feature.home.domain)
             api(projects.feature.home.presentation)
+
+            api(projects.feature.details.data)
+            api(projects.feature.details.domain)
+            api(projects.feature.details.presentation)
 
             implementation(libs.koin.core)
         }

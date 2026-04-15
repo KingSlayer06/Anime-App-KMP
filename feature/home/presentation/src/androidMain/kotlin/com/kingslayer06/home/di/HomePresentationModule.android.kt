@@ -9,9 +9,9 @@ actual fun getHomePresentationModule(): Module {
     return module {
         viewModel {
             HomeViewModel(
-                get(),
-                get(),
-                get()
+                getTopRatedAnimeUseCase = get(),
+                getThisSeasonAnimeUseCase = get(),
+                getUpcomingSeasonAnimeUseCase = get()
             )
         }
     }

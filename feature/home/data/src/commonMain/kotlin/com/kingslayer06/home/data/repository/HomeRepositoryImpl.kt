@@ -43,7 +43,7 @@ class HomeRepositoryImpl(
 
 private fun AnimeDto.toDomain(): Anime {
     return Anime(
-        uuid = malId.toString(),
+        uuid = malId,
         title = titleEnglish ?: title,
         image = images?.jpg?.imageUrl,
         favourites = favorites.toFormattedString()

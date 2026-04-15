@@ -36,7 +36,7 @@ import com.kingslayer06.home.domain.model.Anime
 @Composable
 fun AnimeRecommendations(
     animeList: List<Anime>,
-    onClick: (String) -> Unit
+    onClick: (Int) -> Unit
 ) {
     if (animeList.isEmpty()) {
         AnimeCardSkeleton()
@@ -58,7 +58,7 @@ fun AnimeRecommendations(
 @Composable
 private fun AnimeCard(
     anime: Anime,
-    onClick: (String) -> Unit
+    onClick: (Int) -> Unit
 ) {
     Box(
         modifier = Modifier

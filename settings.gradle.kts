@@ -46,3 +46,7 @@ include(":feature:home:presentation")
 include(":feature:myLibrary:data")
 include(":feature:myLibrary:domain")
 include(":feature:myLibrary:presentation")
+
+include(":feature:details:data")
+include(":feature:details:domain")
+include(":feature:details:presentation")

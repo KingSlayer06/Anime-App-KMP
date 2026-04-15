@@ -28,6 +28,7 @@ object HomeNavGraph: BaseNavGraph {
                     modifier = modifier,
                     onClick = { id ->
                         navController.navigate(
+                            DetailsNavGraph.Destination.Details(id)
                         )
                     }
                 )

@@ -40,7 +40,8 @@ fun App() {
                 startDestination = HomeNavGraph.Destination.Root
             ) {
                 listOf<BaseNavGraph>(
-                    HomeNavGraph
+                    HomeNavGraph,
+                    DetailsNavGraph
                 ).forEach {
                     it.build(
                         modifier = modifier,
