@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.skie)
 }
 
 kotlin {
@@ -19,6 +20,17 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+
+            export(projects.core.network)
+            export(projects.core.util)
+            
+            export(projects.feature.home.data)
+            export(projects.feature.home.domain)
+            export(projects.feature.home.presentation)
+
+            export(projects.feature.details.data)
+            export(projects.feature.details.domain)
+            export(projects.feature.details.presentation)
         }
     }
     
