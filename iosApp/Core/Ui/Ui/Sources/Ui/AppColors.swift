@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-extension Color {
-    static let primary: Color = Color("#FF6B35")
-    static let secondary: Color = Color("#9B6FD4")
+public extension Color {
+    static let themePrimary: Color = Color("#FF6B35")
+    static let themeSecondary: Color = Color("#9B6FD4")
     static let background: Color = Color("#0E0B14")
     static let surface: Color = Color("#1A1625")
     static let surfaceRaised: Color = Color("#252033")
@@ -18,7 +18,7 @@ extension Color {
     static let textSecondary: Color = Color("#8A8599")
 }
 
-extension Color {
+public extension Color {
     init(hex: String) {
         let scanner = Scanner(string: hex)
         _ = scanner.scanString("#")
