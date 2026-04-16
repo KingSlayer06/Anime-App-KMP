@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32AEC752F919C3E002E65EC /* MyLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A32AEC742F919C3E002E65EC /* MyLibrary */; };
+		A32AEC772F919C47002E65EC /* Explore in Frameworks */ = {isa = PBXBuildFile; productRef = A32AEC762F919C47002E65EC /* Explore */; };
 		A3D7B92B2F8FDD91007F3DC9 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B92A2F8FDD91007F3DC9 /* Home */; };
 		A3D7B9392F8FE4FF007F3DC9 /* Details in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9382F8FE4FF007F3DC9 /* Details */; };
 		A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9D72F903BDB007F3DC9 /* Navigation */; };
@@ -39,7 +41,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Details/Details,
+				Explore/Explore,
 				Home/Home,
+				MyLibrary/MyLibrary,
 			);
 			target = 5E51976D89737D378C744743 /* iosApp */;
 		};
@@ -82,8 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32AEC752F919C3E002E65EC /* MyLibrary in Frameworks */,
 				A3D7B9E32F905B9F007F3DC9 /* Ui in Frameworks */,
 				A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */,
+				A32AEC772F919C47002E65EC /* Explore in Frameworks */,
 				A3D7B9DC2F903BE1007F3DC9 /* Utils in Frameworks */,
 				A3D7B92B2F8FDD91007F3DC9 /* Home in Frameworks */,
 				A3D7B9392F8FE4FF007F3DC9 /* Details in Frameworks */,
@@ -101,6 +107,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A32AEC732F919C3E002E65EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE83456C59C885044D043B37 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +121,7 @@
 				A3D7B9CE2F9039D7007F3DC9 /* Core */,
 				DA2696F3C9E12659265A4475 /* Configuration */,
 				43F49158C0F262911A823E08 /* iosApp */,
+				A32AEC732F919C3E002E65EC /* Frameworks */,
 				36B1DB08BB6C1706985EBDFA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +155,8 @@
 				A3D7B9D72F903BDB007F3DC9 /* Navigation */,
 				A3D7B9DB2F903BE1007F3DC9 /* Utils */,
 				A3D7B9E22F905B9F007F3DC9 /* Ui */,
+				A32AEC742F919C3E002E65EC /* MyLibrary */,
+				A32AEC762F919C47002E65EC /* Explore */,
 			);
 			productName = iosApp;
 			productReference = EDC5C290E61B15765E6F04BF /* Anime_App.app */;
@@ -457,6 +473,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A32AEC742F919C3E002E65EC /* MyLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyLibrary;
+		};
+		A32AEC762F919C47002E65EC /* Explore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Explore;
+		};
 		A3D7B92A2F8FDD91007F3DC9 /* Home */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Home;

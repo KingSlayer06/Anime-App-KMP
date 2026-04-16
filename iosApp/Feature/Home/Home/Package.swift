@@ -20,7 +20,6 @@ let package = Package(
                 "Ui"
             ]
         ),
-        
     ],
     swiftLanguageModes: [.v6]
 )

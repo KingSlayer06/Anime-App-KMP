@@ -14,7 +14,6 @@ let package = Package(
         .target(
             name: "Navigation",
         ),
-        
     ],
     swiftLanguageModes: [.v6]
 )

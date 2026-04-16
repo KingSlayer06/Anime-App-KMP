@@ -33,3 +33,27 @@ public extension Color {
         self.init(red: red, green: green, blue: blue)
     }
 }
+
+struct BackgroundModifier: ViewModifier {
+    
+    @ViewBuilder
+    func body(content: Content) -> some View {
+        content
+            .background {
+                LinearGradient(
+                    colors: [Color.surface, Color.background],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            }
+            .ignoresSafeArea(.all)
+    }
+}
+
+extension View {
+    
+    @ViewBuilder
+    public func appBackground() -> some View {
+        self.modifier(BackgroundModifier())
+    }
+}

@@ -7,11 +7,32 @@
 
 import SwiftUI
 import Ui
+import Home
+import Explore
+import MyLibrary
 
 struct MainView: View {
+    @State var selectedRoute: Int? = 0
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
-        Text("Top Anime")
-            .font(.inter(size: 20, weight: .bold))
+        VStack {
+            TabView(selection: $selectedRoute) {
+                switch selectedRoute {
+                    case 0: HomeView()
+                    case 1: ExploreView()
+                    case 2: HomeView()
+                    default: EmptyView()
+                }
+            }
+            
+            BottomTabBar(selectedRoute: $selectedRoute) { route in
+                selectedRoute = route
+            }
+        }
     }
 }
 

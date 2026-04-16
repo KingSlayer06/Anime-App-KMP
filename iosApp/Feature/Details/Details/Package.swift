@@ -10,11 +10,16 @@ let package = Package(
             targets: ["Details"]
         ),
     ],
+    dependencies: [
+        .package(path: "../Core/Ui/Ui"),
+    ],
     targets: [
         .target(
-            name: "Details"
+            name: "Details",
+            dependencies: [
+                "Ui"
+            ]
         ),
-
     ],
     swiftLanguageModes: [.v6]
 )

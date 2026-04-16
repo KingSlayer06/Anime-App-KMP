@@ -12,7 +12,9 @@ public struct HomeView: View {
     public init() { }
     
     public var body: some View {
-        Text("Home")
+        Text("Home View")
+            .font(.inter(size: 20, weight: .bold))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

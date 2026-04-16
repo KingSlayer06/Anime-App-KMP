@@ -18,19 +18,25 @@ struct iOSApp: App {
 }
 
 struct RootView: View {
-    @StateObject private var navHostController = NavHostController { route in
-        switch route {
-            case .home: return AnyView(MainView())
-            case .details(let id): return AnyView(DetailsView(id: id))
-        }
-    }
+    @StateObject private var navHostController = NavHostController()
     
     var body: some View {
         NavigationStack(path: $navHostController.path) {
             MainView()
                 .navigationDestination(for: Destination.self) { route in
-                    navHostController.navigate(route: route)
+                    route.navigate()
                 }
+                .appBackground()
+        }
+    }
+}
+
+extension Destination {
+    @ViewBuilder
+    func navigate() -> some View {
+        switch self {
+            case .home: MainView()
+            case .details(let id): DetailsView(id: id)
         }
     }
 }
