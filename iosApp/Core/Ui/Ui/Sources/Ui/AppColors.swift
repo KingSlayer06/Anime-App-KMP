@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 public extension Color {
-    static let themePrimary: Color = Color("#FF6B35")
-    static let themeSecondary: Color = Color("#9B6FD4")
-    static let background: Color = Color("#0E0B14")
-    static let surface: Color = Color("#1A1625")
-    static let surfaceRaised: Color = Color("#252033")
-    static let textPrimary: Color = Color("#FFFFFF")
-    static let textSecondary: Color = Color("#8A8599")
+    static let themePrimary: Color = Asset.Colors.primary.swiftUIColor
+    static let themeSecondary: Color = Asset.Colors.secondary.swiftUIColor
+    static let background: Color = Asset.Colors.background.swiftUIColor
+    static let surface: Color = Asset.Colors.surface.swiftUIColor
+    static let surfaceRaised: Color = Asset.Colors.surfaceRaised.swiftUIColor
+    static let textPrimary: Color = Asset.Colors.textPrimary.swiftUIColor
+    static let textSecondary: Color = Asset.Colors.textSecondary.swiftUIColor
 }
 
 public extension Color {

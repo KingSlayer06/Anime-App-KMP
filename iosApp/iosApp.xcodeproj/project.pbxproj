@@ -10,8 +10,8 @@
 		A3D7B92B2F8FDD91007F3DC9 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B92A2F8FDD91007F3DC9 /* Home */; };
 		A3D7B9392F8FE4FF007F3DC9 /* Details in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9382F8FE4FF007F3DC9 /* Details */; };
 		A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9D72F903BDB007F3DC9 /* Navigation */; };
-		A3D7B9DA2F903BDE007F3DC9 /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9D92F903BDE007F3DC9 /* Ui */; };
 		A3D7B9DC2F903BE1007F3DC9 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9DB2F903BE1007F3DC9 /* Utils */; };
+		A3D7B9E32F905B9F007F3DC9 /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9E22F905B9F007F3DC9 /* Ui */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D7B9DA2F903BDE007F3DC9 /* Ui in Frameworks */,
+				A3D7B9E32F905B9F007F3DC9 /* Ui in Frameworks */,
 				A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */,
 				A3D7B9DC2F903BE1007F3DC9 /* Utils in Frameworks */,
 				A3D7B92B2F8FDD91007F3DC9 /* Home in Frameworks */,
@@ -101,13 +101,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A3D7B9272F8FDD8B007F3DC9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AE83456C59C885044D043B37 = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +108,6 @@
 				A3D7B9CE2F9039D7007F3DC9 /* Core */,
 				DA2696F3C9E12659265A4475 /* Configuration */,
 				43F49158C0F262911A823E08 /* iosApp */,
-				A3D7B9272F8FDD8B007F3DC9 /* Frameworks */,
 				36B1DB08BB6C1706985EBDFA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,6 +120,7 @@
 			buildConfigurationList = 25FD99912D24BAD0B6723970 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				AB7BE041474D996F3A9B4C09 /* Compile Kotlin Framework */,
+				A357F5D02F91376900805F9D /* ShellScript */,
 				D65B5DF4C60B09F4EC601917 /* Sources */,
 				BB0F87089C7A662A8FD4D2AE /* Frameworks */,
 				F423CBDFD3A9A2051E1C2695 /* Resources */,
@@ -146,8 +139,8 @@
 				A3D7B92A2F8FDD91007F3DC9 /* Home */,
 				A3D7B9382F8FE4FF007F3DC9 /* Details */,
 				A3D7B9D72F903BDB007F3DC9 /* Navigation */,
-				A3D7B9D92F903BDE007F3DC9 /* Ui */,
 				A3D7B9DB2F903BE1007F3DC9 /* Utils */,
+				A3D7B9E22F905B9F007F3DC9 /* Ui */,
 			);
 			productName = iosApp;
 			productReference = EDC5C290E61B15765E6F04BF /* Anime_App.app */;
@@ -200,6 +193,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A357F5D02F91376900805F9D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\n\nROOT=\"${SRCROOT}\"\nAPP_DIR=\"${ROOT}/iosApp\"\nCONFIG=\"${APP_DIR}/swiftgen.yml\"\n\ncd \"${APP_DIR}\"\n\nif command -v swiftgen >/dev/null 2>&1; then\n  swiftgen config run --config \"${CONFIG}\"\nelse\n  echo \"warning: SwiftGen not installed; skipping generation\"\nfi\n";
+		};
 		AB7BE041474D996F3A9B4C09 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -240,6 +250,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "iosApp/Preview\\ Content";
 				DEVELOPMENT_TEAM = 4B485XW35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -273,6 +284,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "iosApp/Preview\\ Content";
 				DEVELOPMENT_TEAM = 4B485XW35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -457,13 +469,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Navigation;
 		};
-		A3D7B9D92F903BDE007F3DC9 /* Ui */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Ui;
-		};
 		A3D7B9DB2F903BE1007F3DC9 /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utils;
+		};
+		A3D7B9E22F905B9F007F3DC9 /* Ui */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Ui;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

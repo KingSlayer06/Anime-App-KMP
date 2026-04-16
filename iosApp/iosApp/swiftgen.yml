@@ -1,0 +1,10 @@
+# iosApp/iosApp/swiftgen.yml
+
+plist:
+  inputs:
+    - Info.plist
+  outputs:
+    - templateName: runtime-swift5
+      output: Generated/Info.swift
+      params:
+        publicAccess: true

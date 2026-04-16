@@ -10,24 +10,11 @@ import Ui
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            Text("Hello World!")
-                .font(.title)
-            
-            Text("Top Anime")
-                .font(.inter(size: 20, weight: .bold))
-                .fontWeight(.bold)
-            
-            Text("Top Anime")
-                .font(Font.custom("Inter-Bold", size: 50))
-                .fontWeight(.bold)
-        }
-        .scaledToFill()
-        .foregroundStyle(Color.red)
+        Text("Top Anime")
+            .font(.inter(size: 20, weight: .bold))
     }
 }
 
 #Preview {
     MainView()
-        .loadCustomFonts()
 }

@@ -7,38 +7,25 @@
 
 import SwiftUI
 
-public extension Font {
-    static func inter(size: CGFloat, weight: FontWeight = .regular) -> Font {
-        return Font.custom(weight.rawValue, size: size)
+public extension SwiftUI.Font {
+    static func inter(size: CGFloat, weight: InterFontWeight = .regular) -> SwiftUI.Font {
+        weight.convertible.swiftUIFont(size: size)
     }
 }
 
 public extension UIFont {
-    static func inter(size: CGFloat, weight: FontWeight = .regular) -> UIFont? {
-        return UIFont(name: weight.rawValue, size: size)
+    static func inter(size: CGFloat, weight: InterFontWeight = .regular) -> UIFont {
+        weight.convertible.font(size: size)
     }
 }
 
-public enum FontProvider {
-    public static func provideInterFont() {
-        let bundle = Bundle.module
-        ["Inter-Regular.ttf", "Inter-Medium.ttf", "Inter-Bold.ttf"].forEach { name in
-            guard let url = bundle.url(forResource: name, withExtension: nil) else { return }
-            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+public enum InterFontWeight {
+    case regular, medium, bold
+    fileprivate var convertible: FontConvertible {
+        switch self {
+            case .regular: FontFamily.Inter28pt.regular
+            case .medium: FontFamily.Inter28pt.medium
+            case .bold: FontFamily.Inter28pt.bold
         }
-    }
-}
-
-public enum FontWeight: String {
-    case regular = "Inter-Regular"
-    case medium = "Inter-Medium"
-    case bold = "Inter-Bold"
-}
-
-extension View {
-    // Attach this to Preview for custom font
-    public func loadCustomFonts() -> some View {
-        FontProvider.provideInterFont()
-        return self
     }
 }

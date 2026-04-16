@@ -10,9 +10,15 @@ let package = Package(
             targets: ["Home"]
         ),
     ],
+    dependencies: [
+        .package(path: "../Core/Ui/Ui"),
+    ],
     targets: [
         .target(
-            name: "Home"
+            name: "Home",
+            dependencies: [
+                "Ui"
+            ]
         ),
         
     ],

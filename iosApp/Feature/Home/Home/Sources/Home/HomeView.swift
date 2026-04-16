@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Ui
 
 public struct HomeView: View {
     public init() { }
     
     public var body: some View {
-        Text("Hello, World!")
+        Text("Home")
     }
 }
 

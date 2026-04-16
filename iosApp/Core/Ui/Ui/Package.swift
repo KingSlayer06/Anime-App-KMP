@@ -10,14 +10,21 @@ let package = Package(
             targets: ["Ui"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
+    ],
     targets: [
         .target(
             name: "Ui",
             resources: [
-                .process("Resources"),
+                .process("Resources/Fonts/"),
+                .process("Resources/Images.xcassets"),
+                .process("Resources/Colors.xcassets"),
+            ],
+            plugins: [
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ]
         ),
-        
     ],
     swiftLanguageModes: [.v6]
 )

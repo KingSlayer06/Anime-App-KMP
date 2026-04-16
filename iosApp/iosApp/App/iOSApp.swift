@@ -8,7 +8,6 @@ import Details
 struct iOSApp: App {
     init() {
         AppModuleKt.doInitKoin()
-        FontProvider.provideInterFont()
     }
 
     var body: some Scene {

@@ -1,0 +1,22 @@
+# iosApp/Core/Ui/Ui/swiftgen.yml
+
+xcassets:
+  inputs:
+    - Sources/Ui/Resources/Images.xcassets
+    - Sources/Ui/Resources/Colors.xcassets
+  outputs:
+    - templatePath: Templates/xcassets-swift6.stencil
+      output: ${DERIVED_SOURCES_DIR}/Assets.swift
+      params:
+        publicAccess: true
+        bundle: Bundle.module
+
+fonts:
+  inputs:
+    - Sources/Ui/Resources/Fonts
+  outputs:
+    - templatePath: Templates/fonts-swift6.stencil
+      output: ${DERIVED_SOURCES_DIR}/Fonts.swift
+      params:
+        publicAccess: true
+        bundle: Bundle.module
