@@ -12,7 +12,7 @@ public final class NavHostController: ObservableObject {
     
     public init() { }
     
-    public func navigate(route: any Hashable) {
+    public func navigate(route: Destination) {
         path.append(route)
     }
     

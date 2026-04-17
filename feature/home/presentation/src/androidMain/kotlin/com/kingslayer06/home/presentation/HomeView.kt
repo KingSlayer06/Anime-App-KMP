@@ -81,7 +81,7 @@ private fun HomeViewContent(
             AnimeListSections(
                 title = "Coming Soon",
                 animeList = uiState.upcomingSeason,
-                onClick = {},
+                onClick = onClick,
                 onSeeAll = {}
             )
         }

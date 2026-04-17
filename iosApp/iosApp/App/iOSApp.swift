@@ -22,20 +22,25 @@ struct RootView: View {
     
     var body: some View {
         NavigationStack(path: $navHostController.path) {
-            MainView()
-                .navigationDestination(for: Destination.self) { route in
-                    route.navigate()
-                }
-                .appBackground()
+            MainView(onClick: { id in
+                navHostController.navigate(route: .details(id: id))
+            })
+            .navigationDestination(for: Destination.self) { route in
+                route.setPath(navHostController)
+            }
+            .appBackground()
         }
     }
 }
 
 extension Destination {
     @ViewBuilder
-    func navigate() -> some View {
+    func setPath(_ navHostController: NavHostController) -> some View {
         switch self {
-            case .home: MainView()
+            case .home: MainView() { id in
+                navHostController.navigate(route: .details(id: id))
+            }
+                
             case .details(let id): DetailsView(id: id)
         }
     }

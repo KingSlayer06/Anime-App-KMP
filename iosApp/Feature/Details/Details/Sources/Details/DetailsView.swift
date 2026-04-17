@@ -8,9 +8,9 @@
 import SwiftUI
 
 public struct DetailsView: View {
-    public let id: Int
+    public let id: Int32
     
-    public init(id: Int) {
+    public init(id: Int32) {
         self.id = id
     }
     

@@ -14,17 +14,21 @@ import MyLibrary
 struct MainView: View {
     @State var selectedRoute: Int? = 0
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
+    var onClick: (Int32) -> Void
     
     var body: some View {
         VStack {
             TabView(selection: $selectedRoute) {
                 switch selectedRoute {
-                    case 0: HomeView()
+                    case 0: HomeView(onClick: onClick)
+                            .appBackground()
+                        
                     case 1: ExploreView()
-                    case 2: HomeView()
+                            .appBackground()
+                        
+                    case 2: MyLibrary()
+                            .appBackground()
+                        
                     default: EmptyView()
                 }
             }
@@ -37,5 +41,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView() { _ in }
 }

@@ -9,5 +9,5 @@ import Foundation
 
 public enum Destination: Hashable {
     case home
-    case details(id: Int)
+    case details(id: Int32)
 }

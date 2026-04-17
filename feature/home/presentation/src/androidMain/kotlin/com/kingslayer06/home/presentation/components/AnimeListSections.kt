@@ -166,7 +166,7 @@ private fun AnimeCard(
 private fun AnimeCardSkeleton() {
     Column(
         modifier = Modifier.width(150.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Box(
             modifier = Modifier

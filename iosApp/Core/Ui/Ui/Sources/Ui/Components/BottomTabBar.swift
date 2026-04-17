@@ -48,6 +48,8 @@ public struct BottomTabBar: View {
     ) {
         self._selectedRoute = selectedRoute
         self.onSelected = onSelected
+        
+        UITabBar.appearance().isHidden = true
     }
     
     fileprivate let navigationItems: [NavigationItem] = [
