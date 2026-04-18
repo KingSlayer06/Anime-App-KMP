@@ -10,6 +10,7 @@
 		A32AEC752F919C3E002E65EC /* MyLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A32AEC742F919C3E002E65EC /* MyLibrary */; };
 		A32AEC772F919C47002E65EC /* Explore in Frameworks */ = {isa = PBXBuildFile; productRef = A32AEC762F919C47002E65EC /* Explore */; };
 		A361B4DA2F92BE1000BD4E0C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A361B4D92F92BE1000BD4E0C /* Kingfisher */; };
+		A36772EC2F93691800193578 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36772EB2F93691800193578 /* Shared.framework */; };
 		A3D7B92B2F8FDD91007F3DC9 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B92A2F8FDD91007F3DC9 /* Home */; };
 		A3D7B9392F8FE4FF007F3DC9 /* Details in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9382F8FE4FF007F3DC9 /* Details */; };
 		A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = A3D7B9D72F903BDB007F3DC9 /* Navigation */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A36772E92F9366B900193578 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/xcode-frameworks/Debug/iphonesimulator26.4/Shared.framework"; sourceTree = "<group>"; };
+		A36772EB2F93691800193578 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/spm-shared/Shared.framework"; sourceTree = "<group>"; };
 		EDC5C290E61B15765E6F04BF /* Anime_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anime_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36772EC2F93691800193578 /* Shared.framework in Frameworks */,
 				A32AEC752F919C3E002E65EC /* MyLibrary in Frameworks */,
 				A3D7B9E32F905B9F007F3DC9 /* Ui in Frameworks */,
 				A3D7B9D82F903BDB007F3DC9 /* Navigation in Frameworks */,
@@ -112,6 +116,8 @@
 		A32AEC732F919C3E002E65EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A36772EB2F93691800193578 /* Shared.framework */,
+				A36772E92F9366B900193578 /* Shared.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,7 +142,7 @@
 			buildConfigurationList = 25FD99912D24BAD0B6723970 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				AB7BE041474D996F3A9B4C09 /* Compile Kotlin Framework */,
-				A357F5D02F91376900805F9D /* ShellScript */,
+				A357F5D02F91376900805F9D /* Compile Swiftgen */,
 				D65B5DF4C60B09F4EC601917 /* Sources */,
 				BB0F87089C7A662A8FD4D2AE /* Frameworks */,
 				F423CBDFD3A9A2051E1C2695 /* Resources */,
@@ -213,7 +219,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A357F5D02F91376900805F9D /* ShellScript */ = {
+		A357F5D02F91376900805F9D /* Compile Swiftgen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,6 +228,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Compile Swiftgen";
 			outputFileListPaths = (
 			);
 			outputPaths = (
