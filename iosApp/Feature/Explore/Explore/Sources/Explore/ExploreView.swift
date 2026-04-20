@@ -7,17 +7,42 @@
 
 import SwiftUI
 import Ui
+import Shared
 
 public struct ExploreView: View {
-    public init() { }
+    @StateObject var viewModel: ExploreViewModelSwift = ExploreViewModelSwift()
+    
+    private var onClick: (Int32) -> Void
+    
+    public init(onClick: @escaping (Int32) -> Void) {
+        self.onClick = onClick
+    }
     
     public var body: some View {
-        Text("Explore View")
-            .font(.inter(size: 20, weight: .bold))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ExploreViewContent(
+            state: viewModel.state,
+            onClick: onClick
+        )
+    }
+}
+
+private struct ExploreViewContent: View {
+    private let state: ExploreUiState
+    private var onClick: (Int32) -> Void
+    
+    init(
+        state: ExploreUiState,
+        onClick: @escaping (Int32) -> Void
+    ) {
+        self.state = state
+        self.onClick = onClick
+    }
+    
+    var body: some View {
+        
     }
 }
 
 #Preview {
-    ExploreView()
+    ExploreView(onClick: { _ in })
 }

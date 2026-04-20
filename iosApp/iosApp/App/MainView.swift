@@ -23,7 +23,7 @@ struct MainView: View {
                     case 0: HomeView(onClick: onClick)
                             .appBackground()
                         
-                    case 1: ExploreView()
+                    case 1: ExploreView(onClick: onClick)
                             .appBackground()
                         
                     case 2: MyLibrary()
