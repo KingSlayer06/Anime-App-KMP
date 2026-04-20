@@ -19,17 +19,10 @@ public struct HomeView: View {
     }
     
     public var body: some View {
-        Group {
-            if viewModel.state.isLoading {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-            } else {
-                HomeViewContent(
-                    state: viewModel.state,
-                    onClick: onClick
-                )
-            }
-        }
+        HomeViewContent(
+            state: viewModel.state,
+            onClick: onClick
+        )
     }
 }
 
