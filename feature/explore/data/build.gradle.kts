@@ -20,7 +20,11 @@ kotlin {
 
         }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.koin.core)
+
+            implementation(projects.feature.explore.domain)
+            implementation(projects.core.network)
+            implementation(projects.core.util)
         }
         iosMain.dependencies {
 

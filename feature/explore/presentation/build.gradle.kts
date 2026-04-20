@@ -17,10 +17,22 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.uiToolingPreview)
+            implementation(libs.compose.uiTooling)
+            implementation(libs.coil.compose)
+            implementation(libs.compose.material.icons.extended)
 
+            implementation(projects.core.ui)
         }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(projects.core.network)
+            implementation(projects.feature.explore.domain)
+
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         iosMain.dependencies {
 

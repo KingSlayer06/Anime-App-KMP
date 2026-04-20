@@ -28,6 +28,10 @@ kotlin {
             export(projects.feature.home.domain)
             export(projects.feature.home.presentation)
 
+            export(projects.feature.explore.data)
+            export(projects.feature.explore.domain)
+            export(projects.feature.explore.presentation)
+
             export(projects.feature.details.data)
             export(projects.feature.details.domain)
             export(projects.feature.details.presentation)
@@ -45,6 +49,10 @@ kotlin {
             api(projects.feature.home.data)
             api(projects.feature.home.domain)
             api(projects.feature.home.presentation)
+
+            api(projects.feature.explore.data)
+            api(projects.feature.explore.domain)
+            api(projects.feature.explore.presentation)
 
             api(projects.feature.details.data)
             api(projects.feature.details.domain)

@@ -1,6 +1,7 @@
 package com.kingslayer06.core.network.service
 
 import com.kingslayer06.core.network.model.AnimeDetailsResponseDto
+import com.kingslayer06.core.network.model.AnimeGenreResponseDto
 import com.kingslayer06.core.network.model.AnimeResponseDto
 import com.kingslayer06.core.network.util.DataError
 import com.kingslayer06.core.network.util.Response
@@ -13,6 +14,8 @@ interface AnimeService {
     suspend fun getThisSeasonAnime(limit: Int): Response<AnimeResponseDto, DataError>
     suspend fun getUpcomingSeasonAnime(limit: Int): Response<AnimeResponseDto, DataError>
     suspend fun getAnimeById(id: Int): Response<AnimeDetailsResponseDto, DataError>
+    suspend fun searchAnime(limit: Int, query: String): Response<AnimeResponseDto, DataError>
+    suspend fun getAnimeGenres(): Response<AnimeGenreResponseDto, DataError>
 }
 
 class AnimeServiceImpl(
@@ -33,4 +36,6 @@ class AnimeServiceImpl(
     override suspend fun getThisSeasonAnime(limit: Int): Response<AnimeResponseDto, DataError> = getRequest("/seasons/now?limit=$limit")
     override suspend fun getUpcomingSeasonAnime(limit: Int): Response<AnimeResponseDto, DataError> = getRequest("/seasons/upcoming?limit=$limit")
     override suspend fun getAnimeById(id: Int): Response<AnimeDetailsResponseDto, DataError> = getRequest("/anime/$id")
+    override suspend fun searchAnime(limit: Int, query: String): Response<AnimeResponseDto, DataError> = getRequest("/anime?q=$query&limit=$limit")
+    override suspend fun getAnimeGenres(): Response<AnimeGenreResponseDto, DataError> = getRequest("/genres/anime?filter=genres")
 }
