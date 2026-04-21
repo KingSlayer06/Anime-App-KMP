@@ -69,7 +69,7 @@ fun BottomNavigationBar(
                 ) {
                     Icon(
                         imageVector = item.icon,
-                        contentDescription = "Home",
+                        contentDescription = item.label,
                         tint = color
                     )
 
